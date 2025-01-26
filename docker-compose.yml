@@ -1,0 +1,13 @@
+services:
+  jupyter:
+    image: jupyter/datascience-notebook
+    container_name: jupyter_crediy_aproval
+    ports:
+      - "8888:8888"  # Mapeia a porta 8888 do container para a porta 8888 local
+    volumes:
+      - .:/home/jovyan/work  # Monta uma pasta local como diretório de trabalho
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    user: root
+    working_dir: /home/jovyan/work  # Define o diretório de trabalho padrão no container
+
